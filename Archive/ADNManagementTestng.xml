@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<suite name="AdminWebAppUITest" verbose="1"  >
+<listeners>
+<!-- <listener class-name="com.medlife.qa.util.WebTestRunListener"></listener> -->
+<!-- <listener class-name="ru.yandex.qatools.allure.testng.AllureTestListener"></listener> -->
+</listeners>
+<!--**************************************** Web Host Names ************************************************************ -->
+
+	<parameter name="adminAppUrl" value="http://192.168.22.181:8080/AdminWebApp"></parameter>
+	<parameter name="doctorAppURL" value="http://192.168.22.181"></parameter>
+	<parameter name="mongoDbUrl" value="192.168.22.181"></parameter>
+	<parameter name="mongoDbPort" value="13017"></parameter>
+	<parameter name="serviceUrl" value="http://192.168.22.181/ml-web-services" />
+
+	<!--*************************Framework Configuration Parameters ************************************** -->
+
+	<parameter name="webDriverGrid" value="http://192.168.22.15:4444/wd/hub" />
+	<parameter name="browser" value="firefox" />
+	<parameter name="softAssertEnabled" value="true"></parameter>
+	<parameter name="generateHARFile" value="false"></parameter>
+	<parameter name="browsermobProxyPort" value="29999"></parameter>
+	<parameter name="webRunMode" value="local"></parameter>
+	<parameter name="chromeDriverPath" value="src/main/resources/drivers"></parameter>
+	<parameter name="profileName" value="selenium_test"></parameter>
+	<parameter name="useFirefoxDefaultProfile" value="false"></parameter>
+
+
+	<!--**************************************** Service Host Names ********************************************************* -->
+
+	<parameter name="doctorInfo" value="/doctor/doctorinfo"></parameter>
+	<parameter name="doctorLogin" value="/doctor/login"></parameter>
+	<parameter name="createPrescrition" value="/doctor/prescription/create"></parameter>
+	<parameter name="pharmacistUrl" value="/pharmacist/login"></parameter>
+	<parameter name="pharmacistCreatePrescription" value="/pharmacist/prescription/create"></parameter>
+
+
+
+	<!--****************************************Test Case Parameters********************************************************** -->
+
+	<parameter name="pharmacistUserName" value="manas.panda@medlife.com" />
+	<parameter name="pharmacistPassword" value="Medlife1$"></parameter>
+	<parameter name="doctorUserName" value="1254444444" />
+	<parameter name="doctorPassword" value="Password1$"></parameter>
+	<parameter name="adminUserName" value="test@medlife.com"></parameter>
+	<parameter name="adminPassword" value="Medlife1$"></parameter>
+	<parameter name="fcUserName" value="manas.panda@medlife.com"></parameter>
+	<parameter name="fcPassword" value="Medlife1$"></parameter>
+	<parameter name="daAgentName" value="Test15"></parameter>
+	<parameter name="defaultQuantityIncrease" value="10"></parameter>
+	<parameter name="cusUserName" value="test5@medlife.com"></parameter>
+	<parameter name="cusPassword" value="Medlife1$"></parameter>
+
+	<!--************************************************************************************************************************ -->
+
+	
+	<test name="AdminWebAppTesting" parallel="false">
+		<classes>
+			
+			    
+			     <class name="com.medlife.ui.admin.ADNManagementTestNG" >
+			    <methods>
+			        <include name="adnUploadInvalidExpiryDate" />
+			        
+				</methods>
+			    </class>
+			
+		</classes>
+	</test>
+</suite>
